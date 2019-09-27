@@ -1,5 +1,8 @@
 <script>
+  import Todos from './components/Todos.svelte';
+
 	export let name;
+
 </script>
 
 <style>
@@ -9,3 +12,4 @@
 </style>
 
 <h1>Hello {name}!</h1>
+<Todos />

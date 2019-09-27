@@ -12,13 +12,15 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "json-server": "^0.15.1",
     "sirv-cli": "^0.4.4"
   },
   "scripts": {
-    "build": "rollup -c",
     "autobuild": "rollup -c -w",
+    "build": "rollup -c",
     "dev": "run-p start:dev autobuild",
     "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev"
+    "start:dev": "sirv public --single --dev",
+    "start:server": "json-server --watch db.json"
   }
 }
