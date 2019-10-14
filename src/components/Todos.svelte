@@ -1,33 +1,33 @@
 <script>
-  import TodoItem from './TodoItem.svelte';
-	import AddTodo from './AddTodo.svelte';
-	import { onMount, afterUpdate } from 'svelte';
-	export let name;
+  import TodoItem from "./TodoItem.svelte";
+  import AddTodo from "./AddTodo.svelte";
+  import { onMount, afterUpdate } from "svelte";
+  export let name;
 
-	let todosData = [];
+  let todosData = [];
 
-	onMount(async ()=> {
-    console.log('onMount');
-	  let response = await fetch('http://localhost:3000/todos');
+  onMount(async () => {
+    console.log("onMount");
+    let response = await fetch("http://localhost:3000/todos");
     let result = await response.json();
-	  todosData = result;
-	})
+    todosData = result;
+  });
 
-	afterUpdate(async ()=> {
-    console.log('afterUpdate');
-    // let response = await fetch('http://localhost:3000/todos');
-    // let result = await response.json();                  
-    // todosData = result;	
-	})
+  afterUpdate(async () => {
+    console.log("afterUpdate");
+    let response = await fetch("http://localhost:3000/todos");
+    let result = await response.json();
+    todosData = result;
+  });
 </script>
 
 <style>
-	h1 {
-		color: purple;
-	}
-	.mtop {
-		margin-top : 15px;
-	}
+  h1 {
+    color: purple;
+  }
+  .mtop {
+    margin-top: 15px;
+  }
 </style>
 
 <AddTodo />
@@ -35,7 +35,10 @@
 
   <div class="ui middle aligned divided list">
     {#each todosData as todo}
-    <TodoItem  title={todo.title} id={todo.id} isCompleted={todo.iscompleted}/>	
+      <TodoItem
+        title={todo.title}
+        id={todo.id}
+        isCompleted={todo.iscompleted} />
     {/each}
   </div>
 </div>

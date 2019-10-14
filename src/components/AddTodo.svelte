@@ -19,9 +19,6 @@
 
 </script>
 
-<style>
-</style>
-
 <div class="ui fluid action input">
   <input type="text" bind:value={titleValue} placeholder="Enter todo...">
   <div class="ui button" on:click={() => addTodo(titleValue)}>Add</div>

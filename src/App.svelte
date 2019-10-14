@@ -1,15 +1,10 @@
 <script>
-  import Todos from './components/Todos.svelte';
+  import Todos from "./components/Todos.svelte";
+  import Nested from "./components/Nested.svelte";
 
-	export let name;
-
+  export let name;
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
-
-<h1>Hello {name}!</h1>
+<Nested answer={'answer'} />
+<h1>Hello: {name}!!</h1>
 <Todos />
