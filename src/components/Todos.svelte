@@ -15,9 +15,9 @@
 
   afterUpdate(async () => {
     console.log("afterUpdate");
-    let response = await fetch("http://localhost:3000/todos");
-    let result = await response.json();
-    todosData = result;
+    // let response = await fetch("http://localhost:3000/todos");
+    // let result = await response.json();
+    // todosData = result;
   });
 </script>
 
@@ -34,11 +34,14 @@
 <div class="ui container mtop">
 
   <div class="ui middle aligned divided list">
+    <!-- {#await response then value} -->
     {#each todosData as todo}
       <TodoItem
         title={todo.title}
         id={todo.id}
         isCompleted={todo.iscompleted} />
     {/each}
+    <!-- {/await} -->
+
   </div>
 </div>
